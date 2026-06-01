@@ -1,0 +1,22 @@
+name: CI Pipeline for C++ project
+
+on: [push, pull_request]
+
+jobs:
+  build-and-test-release:
+    runs-on: windows-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Configure CMake
+        run: cmake -B build -S . -DCMAKE_BUILD_TYPE=Release
+      
+      - name: Build
+        run: cmake --build build --config Release 
+      
+      - name: Run Tests
+        run: |
+          cd build
+          ctest -C Release --output-on-failure

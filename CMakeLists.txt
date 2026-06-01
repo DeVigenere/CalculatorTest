@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.20)
-project(tests, VERSION 1.0)
+project(tests VERSION 1.0)
 
-set(CMAKE_CXX_STANDART 17)
-set(CMAKE_CXX_STANDART_REQUIRED ON)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 include(FetchContent)
@@ -27,3 +27,5 @@ target_link_libraries(calculator_tests
 
 include(GoogleTest)
 gtest_discover_tests(calculator_tests)
+
+enable_testing()
