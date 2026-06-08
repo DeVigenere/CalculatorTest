@@ -2,7 +2,7 @@
 #include <gtest/gtest.h>
 #include <stdexcept>
 
-// Задача 1: Базовые тесты
+
 TEST(CalculatorTest, AddPositiveNumbers) {
     Calculator calc;
     EXPECT_EQ(calc.Add(2, 3), 5);
@@ -33,17 +33,17 @@ TEST(CalculatorTest, IsEvenWithOddNumber) {
     EXPECT_FALSE(calc.IsEven(5));
 }
 
-// Задача 2: Тестирование исключений
+
 TEST(CalculatorTest, DivideByZeroThrowsException) {
     Calculator calc;
     ASSERT_THROW(calc.Divide(10, 0), std::invalid_argument);
 }
 
-// Задача 3: Тестовые фикстуры
+
 class CalculatorFixtureTest : public ::testing::Test {
 protected:
     void SetUp() override {
-        // Инициализация перед каждым тестом
+        
     }
     Calculator calc;
 };
